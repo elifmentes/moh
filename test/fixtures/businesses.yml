@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  budget: MyString
+  rating: 1
+  location: MyString
+  calendar: MyString
+
+two:
+  title: MyString
+  budget: MyString
+  rating: 1
+  location: MyString
+  calendar: MyString
