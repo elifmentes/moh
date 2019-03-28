@@ -10,6 +10,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'pundit'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
