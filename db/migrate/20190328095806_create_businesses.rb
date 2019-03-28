@@ -6,6 +6,7 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.integer :rating
       t.string :location
       t.string :calendar
+      t.references :owner, index: true, foreign_key: { to_table: :users }
 
       t.timestamps
     end
