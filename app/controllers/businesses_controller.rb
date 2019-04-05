@@ -1,6 +1,10 @@
 class BusinessesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :home]
   before_action :find_business, only: [:show, :edit, :update, :destroy, :book]
+
+  def home
+    @categories = Business::CATEGORIES
+  end
 
   def index
     @businesses = Business.all
@@ -64,7 +68,7 @@ class BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:title, :budget, :rating, :location, :photo, :calendar)
+    params.require(:business).permit(:title, :budget, :rating, :location, :photo, :calendar, :category)
   end
 
   def find_business
