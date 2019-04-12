@@ -1,6 +1,111 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-moh">
-  <div class="moh-logo">
-    <%= image_tag('logo_moh.png', size: "46x70") %>
-  </div>
-</div>
+<div class="navbar-moh">
+  <% if user_signed_in? %>
+    <% if current_user %>
+      <div class="nav-moh-left hidden-xs hidden-sm">
+        <div class="navbar-moh-item-left">
+          <div class="dropdown">
+            <%= image_tag asset_path('logo_moh.png'), alt: "alttext", class: "moh-logo dropdown-toggle", id: "navbar-moh-menu", "data-toggle": "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-left navbar-moh-dropdown-menu-left">
+              <!-- home path -->
+              <li>
+                <%= link_to root_path do %>Home<% end %>
+              </li>
+              <!-- My Calendar -->
+              <li><a href="#">My Calendar</a></li>
+              <!-- My Lists -->
+              <li><a href="#">My Lists</a></li>
 
+              <%# @categories.each do |category| %>
+                <!-- <li> -->
+                  <%#= link_to businesses_path(category) do %>
+                  <%#= t(".businesses", default: "#{category}") %>
+                  <%# end %>
+                <!-- </li> -->
+              <%# end %>
+              <!-- Bakers -->
+              <!-- <li>Bakers</li> -->
+              <!-- Calligraphes -->
+              <!-- <li>Calligraphes</li> -->
+              <!-- Caterers -->
+              <!-- <li>Caterers</li> -->
+              <!-- Dress Stores -->
+              <!-- <li>Dress Stores</li> -->
+              <!-- Florists -->
+              <!-- <li>Florists</li> -->
+              <!-- HairDressers -->
+              <!-- <li>Hair Dressers</li> -->
+              <!-- Photographers -->
+              <!-- <li>Photographers</li> -->
+              <!-- Venues -->
+              <!-- <li>Venues</li> -->
+              <!-- About -->
+              <li><a href="#">About</a></li>
+              <!-- Contact -->
+              <li><a href="#">Contact</a></li>
+              <!-- Logout -->
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-moh-right hidden-xs hidden-sm">
+        <%= link_to "Owning a business?", new_business_path, class: "navbar-moh-item-right navbar-moh-link" %>
+        <div class="navbar-moh-item-right">
+          <div class="dropdown">
+            <% if current_user.photo.present? %>
+              <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-moh-menu", "data-toggle" => "dropdown" %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-moh-dropdown-menu">
+            <% else %>
+               <%= image_tag asset_path("default_avatar.png"), alt: "alttext", class: "avatar dropdown-toggle", id: "navbar-moh-menu", "data-toggle": "dropdown" %>
+               <ul class="dropdown-menu dropdown-menu-right navbar-moh-dropdown-menu">
+            <% end %>
+              <li>
+                <%= link_to user_path(current_user) do %>
+                  <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="nav-moh-left hidden-xs hidden-sm">
+      <div class="navbar-moh-item">
+        <div class="dropdown">
+          <%= image_tag asset_path('logo_moh.png'), alt: "alttext", class: "moh-logo dropdown-toggle", id: "navbar-moh-menu", "data-toggle": "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-left navbar-moh-dropdown-menu">
+            <!-- home path -->
+            <li>
+              <%= link_to root_path do %>Home<% end %>
+            </li>
+            <!-- Bakers -->
+            <!-- <li>Bakers</li> -->
+            <!-- Calligraphes -->
+            <!-- <li>Calligraphes</li> -->
+            <!-- Caterers -->
+            <!-- <li>Caterers</li> -->
+            <!-- Dress Stores -->
+            <!-- <li>Dress Stores</li> -->
+            <!-- Florists -->
+            <!-- <li>Florists</li> -->
+            <!-- HairDressers -->
+            <!-- <li>Hair Dressers</li> -->
+            <!-- Photographers -->
+            <!-- <li>Photographers</li> -->
+            <!-- Venues -->
+            <!-- <li>Venues</li> -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-moh-right hidden-xs hidden-sm">
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-moh-item navbar-moh-link" %>
+    </div>
+  <% end %>
+</div>
