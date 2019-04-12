@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h3>Do you have a business?</h3>
+      <%= simple_form_for @business do |t| %>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= t.input :title %>
+            <%= t.input :budget %>
+            <%= t.input :rating %>
+            <%= t.input :calendar %>
+            <%= t.input :location, id: "location" %>
+
+            <div>
+              <%= t.select :category, Business::CATEGORIES %>
+            </div>
+
+            <%= t.input :photo %>
+            <%= t.input :photo_cache, as: :hidden %>
+            <div class="form-actions">
+              <%= t.button :submit %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Back", :back %>
+

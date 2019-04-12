@@ -1,20 +1,10 @@
 <div class="container">
-  <div class="cards">
-    <div class="title">
-      <h1>CATEGORIES</h1>
-    </div>
-    <div class="card-container">
-      <div class="row">
+  <div class="card-container">
+    <div class="row">
+      <div class="cards">
         <% @categories.each do |category| %>
-          <div class="col-xs-4 col-sm-3">
-            <div class="category-card">
-              <div class="category-image">
-                <%= image_tag(category) %>
-              </div>
-              <div class="category-name">
-                <%= category %>
-              </div>
-            </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= render 'card', category: category %>
           </div>
         <% end %>
       </div>

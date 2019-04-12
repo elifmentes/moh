@@ -7,7 +7,7 @@ class BusinessesController < ApplicationController
   end
 
   def index
-    @businesses = Business.all
+    @businesses = Business.where(category: params[:category])
   end
 
   def show

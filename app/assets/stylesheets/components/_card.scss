@@ -1,0 +1,35 @@
+.cards {
+  width: auto;
+  height: 100%;
+  margin: auto;
+}
+
+.card-container {
+  margin-top: 40px;
+}
+
+.category-card {
+  border: 1px solid rgba(128,128,128,0.2);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  border-radius: 1px;
+  margin: 20px auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-image {
+  margin: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.category-image img {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+}
+
+.category-name {
+  height: 40px;
+}

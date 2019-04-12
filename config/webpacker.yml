@@ -3,11 +3,11 @@
 default: &default
   source_path: app/javascript
   source_entry_path: packs
-  public_root_path: public
+  # public_root_path: public
   public_output_path: packs
   cache_path: tmp/cache/webpacker
-  check_yarn_integrity: false
-  webpack_compile_output: false
+  # check_yarn_integrity: false
+  # webpack_compile_output: false
 
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
@@ -19,22 +19,22 @@ default: &default
   # Extract and emit a css file
   extract_css: false
 
-  static_assets_extensions:
-    - .jpg
-    - .jpeg
-    - .png
-    - .gif
-    - .tiff
-    - .ico
-    - .svg
-    - .eot
-    - .otf
-    - .ttf
-    - .woff
-    - .woff2
+  # static_assets_extensions:
+  #   - .jpg
+  #   - .jpeg
+  #   - .png
+  #   - .gif
+  #   - .tiff
+  #   - .ico
+  #   - .svg
+  #   - .eot
+  #   - .otf
+  #   - .ttf
+  #   - .woff
+  #   - .woff2
 
   extensions:
-    - .mjs
+    # - .mjs
     - .js
     - .sass
     - .scss
