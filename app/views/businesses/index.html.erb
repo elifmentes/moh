@@ -1,5 +1,5 @@
-<ul>
+<div class="businesses">
   <% @businesses.each do |business| %>
-    <li><%= business.title %></li>
+    <h3><%= business.title %> | <%= business.category %></h3>
   <% end %>
-</ul>
+</div>

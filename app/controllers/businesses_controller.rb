@@ -1,13 +1,26 @@
 class BusinessesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :home]
-  before_action :find_business, only: [:show, :edit, :update, :destroy, :book]
+  before_action :find_business, only: [:show, :edit, :update, :destroy, :book, :find_category]
+
+  # def find_category
+  #   @category = @business.category
+  #   @categories.include?(@category)
+  # end
 
   def home
     @categories = Business::CATEGORIES
   end
 
   def index
-    @businesses = Business.where(category: params[:category])
+    @businesses = Business.all
+    # @categories = Business::CATEGORIES
+    # @categories.each do |category|
+    #   @category = category
+    #   @category
+    # end
+    # # find_category
+    # @businesses = Business.where(category: @category)
+    # @businesses = Business.where(category: params[:category])
   end
 
   def show
