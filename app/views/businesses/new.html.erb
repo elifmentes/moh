@@ -12,7 +12,7 @@
             <%= t.input :location, id: "location" %>
 
             <div>
-              <%= t.select :category, Business::CATEGORIES %>
+              <%= t.input :category, collection: ["Bakers", "Caligraphes", "Caterers", "Dress", "Florists", "Hair", "Photographers", "Venues"] %>
             </div>
 
             <%= t.input :photo %>
