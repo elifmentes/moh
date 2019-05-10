@@ -1,13 +1,22 @@
 require 'faker'
 
-bakers = Category.create(name: "Bakers")
-caligraphes = Category.create(name: "Caligraphes")
-caterers = Category.create(name: "Caterers")
-dress = Category.create(name: "Dress")
-florists = Category.create(name: "Florists")
-hair = Category.create(name: "Hair")
-photographers = Category.create(name: "Photographers")
-venues = Category.create(name: "Venues")
+1.times do |time|
+  bakers = Category.new
+  bakers.name = "Bakers"
+  bakers.save
+end
+
+
+
+
+Category.create(name: "Caligraphes")
+Category.create(name: "Caterers")
+Category.create(name: "Dress")
+Category.create(name: "Florists")
+Category.create(name: "Hair")
+Category.create(name: "Photographers")
+Category.create(name: "Venues")
+
 # 20.times do |time|
 #   user = User.new
 #   user.username = Faker::Internet.username(5..15)

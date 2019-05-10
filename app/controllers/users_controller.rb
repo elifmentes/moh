@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   def businesses
-    @businesses = Settlement.where(user: @user)
+    @owned_businesses = Business.where(owner: @user)
+    @businesses = Settlement.where(user: @user).map { |b| b.business }
   end
 
   private
@@ -33,6 +34,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:photo)
+    params.require(:user).permit(:photo, :username)
   end
 end
