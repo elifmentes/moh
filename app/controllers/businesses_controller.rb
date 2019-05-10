@@ -1,7 +1,7 @@
 class BusinessesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :home]
   before_action :find_business, only: [:show, :edit, :update, :destroy, :book]
-  before_action :find_category, only: [:show, :edit, :update, :destroy, :book]
+  before_action :find_category, only: [:index]
 
   # def find_category
   #   @category = @business.category
@@ -9,7 +9,7 @@ class BusinessesController < ApplicationController
   # end
 
   def index
-    @businesses = Business.all
+    @businesses = Business.all.where(category: @category)
     # @categories = Business::CATEGORIES
     # @categories.each do |category|
     #   @category = category
@@ -67,7 +67,7 @@ class BusinessesController < ApplicationController
     @settlement.user = current_user
     @settlement.business = @business
     if @settlement.save
-      flash[:notice] = "You have a this item"
+      flash[:notice] = "You have this item"
       redirect_to business_path(@business)
     else
       flash[:alert] = "Sorry!"
