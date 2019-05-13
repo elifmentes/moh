@@ -4,9 +4,9 @@ class CategoriesController < ApplicationController
     @user = current_user
   end
 
-  # private
+  private
 
-  # def category_params
-  #   params.require(:category).permit(:name)
-  # end
+  def category_params
+    params.require(:category).permit(:name)
+  end
 end

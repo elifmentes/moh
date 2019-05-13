@@ -1,16 +1,15 @@
 class BusinessesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :home]
-  before_action :find_business, only: [:show, :edit, :update, :destroy, :book]
-  before_action :find_category, only: [:index]
+  before_action :find_business, only: [:show, :edit, :update, :destroy, :book, :find_category]
+  # before_action :find_category, only: [:index]
 
-  # def find_category
-  #   @category = @business.category
-  #   @categories.include?(@category)
-  # end
+  def find_category
+    @category = @business.category
+  end
 
   def index
-    @businesses = Business.all.where(category: @category)
-    # @categories = Business::CATEGORIES
+    find_category
+    @businesses = Business.where(category: @category)
     # @categories.each do |category|
     #   @category = category
     #   @category
@@ -75,17 +74,18 @@ class BusinessesController < ApplicationController
     end
   end
 
+
   private
 
   def business_params
     params.require(:business).permit(:title, :budget, :rating, :location, :photo, :calendar, :category)
   end
 
-  def find_category
-    @category = Category.find(params[:id])
-  end
-
   def find_business
     @business = Business.find(params[:id])
   end
+
+  # def find_category
+  #   @category = Category.find(params[:id])
+  # end
 end
