@@ -12,6 +12,15 @@
                   Home
                 <% end %>
               </li>
+
+              <!-- Categories -->
+              <% Category.all.each do |category| %>
+                <li><%= link_to category_businesses_path(category) do %>
+                    <% category.name %>
+                  <% end %>
+                </li>
+              <% end %>
+
               <!-- My Calendar -->
               <li><a href="#">My Calendar</a></li>
               <!-- My Lists -->
@@ -37,7 +46,7 @@
               <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-moh-menu", "data-toggle" => "dropdown" %>
               <ul class="dropdown-menu dropdown-menu-right navbar-moh-dropdown-menu">
             <% else %>
-               <%= image_tag asset_path("default_avatar.png"), alt: "alttext", class: "avatar dropdown-toggle", id: "navbar-moh-menu", "data-toggle": "dropdown" %>
+               <%= image_tag asset_path("bride_profile.jpg"), alt: "alttext", class: "avatar dropdown-toggle", id: "navbar-moh-menu", "data-toggle": "dropdown" %>
                <ul class="dropdown-menu dropdown-menu-right navbar-moh-dropdown-menu">
             <% end %>
               <li>

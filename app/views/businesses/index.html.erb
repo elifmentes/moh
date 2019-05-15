@@ -1,5 +1,12 @@
-<div class="businesses">
-  <% @businesses.each do |business| %>
-    <h3><%= business.title %> | <%= business.category %></h3>
-  <% end %>
+<div class="container">
+  <div class="card-container">
+    <div class="row">
+      <div class="cards">
+        <h2><%= @category.name %></h2>
+        <% @businesses.each do |business| %>
+          <%= render 'cards', business: business %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
