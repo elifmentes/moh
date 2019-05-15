@@ -1,11 +1,39 @@
-<div class="business-cards">
-  <% if business.photo.present? %>
-    <div class="business-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path business.photo %>)">
-      <h3><%= business.title %></h3>
+<div class="col-xs-3">
+  <div class="business-cards">
+    <div class="business-photo">
+      <% if business.photo.present? %>
+        <div class="business-image business-loaded" style="background-image: url(<%= cl_image_path business.photo %>); background-size: cover">
+        </div>
+      <% else %>
+        <div class="business-image">
+          <%= image_tag asset_path('logo_moh.png') %>
+        </div>
+      <% end %>
     </div>
-  <% else %>
-    <div class="business-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_url('logo_moh.png') %>)">
-      <h3><%= business.title %></h3>
+    <div class="business-bottom">
+      <div class="user-photo">
+        <% if business.owner.photo.present? %>
+          <div class="user-image avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path business.owner.photo %>); ; background-size: cover">
+          </div>
+        <% else %>
+          <div class="user-image avatar">
+            <%= image_tag asset_path('bride_profile.jpg') %>
+          </div>
+        <% end %>
+      </div>
+      <div class="business-info">
+        <p><%= business.title %></p>
+        <p><%= business.location %></p>
+        <% if business.budget < 20000 %>
+          <p>$</p>
+        <% elsif business.budget >= 20000 && business.budget <= 50000 %>
+          <p>$$</p>
+        <% else %>
+          <p>$$$</p>
+        <% end %>
+        </p>
+      </div>
     </div>
-  <% end %>
+  </div>
 </div>
+

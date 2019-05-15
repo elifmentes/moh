@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_28_101427) do
   create_table "businesses", force: :cascade do |t|
     t.bigint "category_id"
     t.string "title"
-    t.string "budget"
+    t.integer "budget"
     t.integer "rating"
     t.string "location"
     t.string "calendar"

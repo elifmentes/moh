@@ -32,7 +32,7 @@ end
 8.times do |time|
   business = Business.new
   business.title = Faker::Movies::HarryPotter.spell
-  business.budget = rand(1..100).to_s
+  business.budget = rand(1..250000)
   business.rating = rand(1..5)
   business.location = Faker::Movies::HarryPotter.location
   business.calendar = 'You will build your calendar'

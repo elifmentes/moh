@@ -1,22 +1,10 @@
 class BusinessesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :home]
-  before_action :find_business, only: [:show, :edit, :update, :destroy, :book, :find_category]
-  # before_action :find_category, only: [:index]
-
-  def find_category
-    @category = @business.category
-  end
+  before_action :find_business, only: [:show, :edit, :update, :destroy, :book]
+  before_action :find_category, only: [:index]
 
   def index
-    find_category
     @businesses = Business.where(category: @category)
-    # @categories.each do |category|
-    #   @category = category
-    #   @category
-    # end
-    # # find_category
-    # @businesses = Business.where(category: @category)
-    # @businesses = Business.where(category: params[:category])
   end
 
   def show
@@ -25,6 +13,7 @@ class BusinessesController < ApplicationController
   end
 
   def new
+    # @category = Category.find[:category_id]
     @business = Business.new
   end
 
@@ -33,6 +22,7 @@ class BusinessesController < ApplicationController
   end
 
   def create
+    @category = Category.find(business_params[:category_id])
     @business = Business.new(business_params)
     authorize @business
     @business.owner = current_user
@@ -74,18 +64,17 @@ class BusinessesController < ApplicationController
     end
   end
 
-
   private
 
   def business_params
-    params.require(:business).permit(:title, :budget, :rating, :location, :photo, :calendar, :category)
+    params.require(:business).permit(:title, :budget, :rating, :location, :photo, :calendar, :category_id)
   end
 
   def find_business
     @business = Business.find(params[:id])
   end
 
-  # def find_category
-  #   @category = Category.find(params[:id])
-  # end
+  def find_category
+    @category = Category.find(params[:category_id])
+  end
 end

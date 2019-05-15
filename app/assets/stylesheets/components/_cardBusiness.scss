@@ -1,0 +1,62 @@
+.business-cards {
+  height: 270px;
+  width: 250px;
+  margin: 0px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  border-radius: 1px;
+  justify-content: center;
+}
+
+.business-photo {
+  height: 170px;
+  width: 250px;
+}
+
+.business-image {
+  height: 170px;
+  width: 250px;
+  background-position: center;
+  text-align: center;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+}
+
+.business-loaded img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.business-image img {
+  height: 170px;
+  // width: 250px;
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+}
+
+.business-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  // margin-left: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+.user-photo {
+  width: 25%;
+}
+
+.user-photo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.business-info {
+  padding-left: 10px;
+  width: 100%;
+}
+
+.business-info p {
+  font-size: 13px;
+  margin: 0px;
+}
