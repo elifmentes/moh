@@ -1,4 +1,13 @@
+import 'mapbox-gl/dist/mapbox-gl.css';
 import "bootstrap";
+
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+// import { initProfileMapbox } from '../plugins/init_profile_map';
+
+initMapbox();
+initAutocomplete();
+// initProfileMapbox();
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in

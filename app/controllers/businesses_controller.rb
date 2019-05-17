@@ -9,6 +9,11 @@ class BusinessesController < ApplicationController
 
   def show
     authorize @business
+    @markers = [{
+      lng: @business.longitude,
+      lat: @business.latitude
+    }]
+
     @business
   end
 
