@@ -291,6 +291,8 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
+  config.omniauth :google, "I 137775949618-i6vm9t15lousqoe3ki1qsnbvca57djcs.apps.googleusercontent.co", "izcjjvytdıvcog24epqewfo2"
+
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is

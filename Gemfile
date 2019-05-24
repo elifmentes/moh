@@ -6,6 +6,9 @@ ruby '2.5.3'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google'
+
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'pg', '>= 0.18', '< 2.0'
