@@ -3,9 +3,9 @@
     <div class="row">
       <div class="cards">
         <% @categories.each do |category| %>
-          <%= link_to category_businesses_path(category) do %>
+          <%#x= link_to category_businesses_path(category) do %>
             <%= render 'card', category: category %>
-          <% end %>
+          <%# end %>
         <% end %>
       </div>
     </div>
