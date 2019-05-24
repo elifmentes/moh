@@ -6,7 +6,12 @@ require 'faker'
   bakers.save
 end
 
-
+# Transaction.destroy_all
+User.destroy_all
+# Step.destroy_all
+# Task.destroy_all
+Category.destroy_all
+Business.destroy_all
 
 
 Category.create(name: "Caligraphes")
