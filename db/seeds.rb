@@ -1,10 +1,10 @@
 require 'faker'
 
-1.times do |time|
-  bakers = Category.new
-  bakers.name = "Bakers"
-  bakers.save
-end
+# 1.times do |time|
+#   bakers = Category.new
+#   bakers.name = "Bakers"
+#   bakers.save
+# end
 
 # User.destroy_all
 # Category.destroy_all
