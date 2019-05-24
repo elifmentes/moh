@@ -4,7 +4,9 @@
       <div class="cards">
         <h2><%= @category.name %></h2>
         <% @businesses.each do |business| %>
-          <%= render 'cards', business: business %>
+          <%= link_to business_path(business) do %>
+            <%= render 'cards', business: business %>
+          <% end %>
         <% end %>
       </div>
     </div>
