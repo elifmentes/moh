@@ -9,9 +9,13 @@ class BusinessesController < ApplicationController
 
   def show
     authorize @business
+
+    # @business = Business.where.not(latitude: nil, longitude: nil)
+
     @markers = [{
       lng: @business.longitude,
       lat: @business.latitude
+      # infoWindow: render_to_string(partial: "infowindow", locals: { business: @business })
     }]
 
     @business
