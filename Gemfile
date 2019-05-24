@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'redis'
 gem 'geocoder'
+gem 'google-api-client', '~> 0.29.2'
 
 gem 'simple_form'
 gem 'autoprefixer-rails'
