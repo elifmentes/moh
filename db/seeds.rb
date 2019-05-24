@@ -6,9 +6,9 @@ require 'faker'
   bakers.save
 end
 
-User.destroy_all
-Category.destroy_all
-Business.destroy_all
+# User.destroy_all
+# Category.destroy_all
+# Business.destroy_all
 
 Category.create(name: "Bakers")
 Category.create(name: "Caligraphes")
